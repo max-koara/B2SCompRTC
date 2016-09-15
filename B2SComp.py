@@ -48,11 +48,11 @@ b2scomp_spec = ["implementation_id", "B2SComp",
 # @brief ModuleDescription
 # 
 # LEDRTCがShort型データによって点灯を制御しているため、Buttonユニットなどの二値制
-	御による点灯を可能にするための変換コンポーネント。True=1023、False=0として出力を
-	行う
+#	御による点灯を可能にするための変換コンポーネント。True=1023、False=0として出力を
+#	行う
 # 
 # InPort: BUTTONRTCなどのBoolean型出力をうけつける
-	OutPort: LEDRTCへの信号出力
+#	OutPort: LEDRTCへの信号出力
 # 
 # 
 class B2SComp(OpenRTM_aist.DataFlowComponentBase):
@@ -71,8 +71,12 @@ class B2SComp(OpenRTM_aist.DataFlowComponentBase):
 		 - Type: Boolean
 		"""
 		self._B_SignalIn = OpenRTM_aist.InPort("B_Signal", self._d_b_signal)
-		s_signal_arg = [None] * ((len(RTC._d_TimedShort) - 4) / 2)
-		self._d_s_signal = RTC.TimedShort(*s_signal_arg)
+		
+		#Change code run write() like ver.1.1.0
+		#s_signal_arg = [None] * ((len(RTC._d_TimedShort) - 4) / 2)
+		#self._d_s_signal = RTC.TimedShort(*s_signal_arg)
+		self._d_s_signal = RTC.TimedShort(RTC.Time(0,0),0)
+		
 		"""
 		Short型データを出力する
 		 - Type: Short
@@ -195,7 +199,16 @@ class B2SComp(OpenRTM_aist.DataFlowComponentBase):
 		#
 		#
 	def onExecute(self, ec_id):
-	
+		if(self._B_SignalIn.isNew()):
+			
+			self._d_b_signal = self._B_SignalIn.read()
+			if(self._d_b_signal.data):
+				self._d_s_signal.data = 1023
+			else:
+				self._d_s_signal.data = 0
+
+		self._S_SignalOut.write()		
+
 		return RTC.RTC_OK
 	
 	#	##
