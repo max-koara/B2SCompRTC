@@ -1,0 +1,28 @@
+2016-10-05 14:33:58,598 manager INFO 1.1.0
+2016-10-05 14:33:58,598 manager INFO Copyright (C) 2003-2010
+2016-10-05 14:33:58,599 manager INFO   Noriaki Ando
+2016-10-05 14:33:58,599 manager INFO   Intelligent Systems Research Institute, AIST
+2016-10-05 14:33:58,599 manager INFO Manager starting.
+2016-10-05 14:33:58,599 manager INFO Starting local logging.
+2016-10-05 14:34:00,895 manager.namingmanager INFO NameServer connection failed: corba/localhost
+2016-10-05 14:34:03,028 ManagerServant INFO Master manager not found
+2016-10-05 14:34:03,029 manager WARNING Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\Manager.py", line 1900, in initManagerServant
+    reffile = file(self._config.getProperty("manager.refstring_path"),'w')
+IOError: [Errno 2] No such file or directory: '/var/log/rtcmanager.ref'
+
+2016-10-05 14:34:03,094 LocalServiceAdmin INFO All the local services are enabled.
+2016-10-05 14:34:03,154 manager INFO Component type conf file: B2SComp.conf loaded.
+2016-10-05 14:34:03,158 ec_base INFO setRate(1000000.000000) done
+2016-10-05 14:34:03,158 ec_base INFO setRate(1000.000000) done
+2016-10-05 14:34:03,160 rtobject INFO 1 execution context was created.
+2016-10-05 14:34:03,164 rtobject INFO Initial active configuration set is default-set.
+2016-10-05 14:34:10,934 manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2016-10-05 14:34:10,934 manager.namingmanager INFO Connected to a name server: corba/localhost
+2016-10-05 14:34:15,933 SdoServiceAdmin WARNING No available SDO service in the factory: 
+2016-10-05 14:34:15,933 SdoServiceAdmin ERROR type  already exists.
+2016-10-05 14:34:15,934 SdoServiceAdmin WARNING No available SDO service in the factory: IDL:OpenRTM/ComponentObserver:1.0
+2016-10-05 14:34:15,934 SdoServiceAdmin ERROR type 0597113b-e48a-4ba3-a59e-18a7afb70376 already exists.
+2016-10-05 14:34:41,555 ec_worker ERROR State of the RTC is not ACTIVE_STATE.
+2016-10-05 14:34:41,584 ec_worker WARNING ExecutionContext is already stopped.
+2016-10-05 14:34:41,584 ec_base ERROR Invoking on_shutdown() for each RTC failed.

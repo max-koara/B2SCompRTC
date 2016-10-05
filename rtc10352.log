@@ -1,0 +1,58 @@
+2016-10-05 17:01:15,516 manager INFO 1.1.0
+2016-10-05 17:01:15,516 manager INFO Copyright (C) 2003-2010
+2016-10-05 17:01:15,516 manager INFO   Noriaki Ando
+2016-10-05 17:01:15,516 manager INFO   Intelligent Systems Research Institute, AIST
+2016-10-05 17:01:15,516 manager INFO Manager starting.
+2016-10-05 17:01:15,516 manager INFO Starting local logging.
+2016-10-05 17:01:15,519 manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2016-10-05 17:01:17,529 ManagerServant INFO Master manager not found
+2016-10-05 17:01:17,529 manager WARNING Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\Manager.py", line 1900, in initManagerServant
+    reffile = file(self._config.getProperty("manager.refstring_path"),'w')
+IOError: [Errno 2] No such file or directory: '/var/log/rtcmanager.ref'
+
+2016-10-05 17:01:17,530 LocalServiceAdmin INFO All the local services are enabled.
+2016-10-05 17:01:17,539 manager INFO Component type conf file: B2SComp.conf loaded.
+2016-10-05 17:01:17,543 ec_base INFO setRate(1000000.000000) done
+2016-10-05 17:01:17,545 ec_base INFO setRate(1000.000000) done
+2016-10-05 17:01:17,546 rtobject INFO 1 execution context was created.
+2016-10-05 17:01:17,549 rtobject INFO Initial active configuration set is default-set.
+2016-10-05 17:01:23,766 SdoServiceAdmin WARNING No available SDO service in the factory: 
+2016-10-05 17:01:23,766 SdoServiceAdmin ERROR type  already exists.
+2016-10-05 17:01:23,767 SdoServiceAdmin WARNING No available SDO service in the factory: IDL:OpenRTM/ComponentObserver:1.0
+2016-10-05 17:01:23,767 SdoServiceAdmin ERROR type e7749550-60b7-4f8d-bc1a-1a4414735195 already exists.
+2016-10-05 17:20:13,301 ec_worker WARNING ExecutionContext is already running.
+2016-10-05 17:20:13,302 ec_base ERROR Invoking on_startup() for each RTC failed.
+2016-10-05 17:21:45,417 B_Signal WARNING Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\PortBase.py", line 2262, in checkPorts
+    if port._non_existent():
+  File "C:\Python27\lib\site-packages\omniORB\CORBA.py", line 561, in _non_existent
+    return self._obj.nonExistent()
+COMM_FAILURE: CORBA.COMM_FAILURE(omniORB.COMM_FAILURE_WaitingForReply, CORBA.COMPLETED_MAYBE)
+
+2016-10-05 17:21:45,417 B_Signal WARNING Dead connection: 2aef5f14-8ad2-11e6-913e-b827eb298439
+2016-10-05 17:22:06,440 B_Signal WARNING Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\PortBase.py", line 836, in disconnect
+    return p.notify_disconnect(connector_id)
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTM_IDL\RTC_idl.py", line 1207, in notify_disconnect
+    return self._obj.invoke("notify_disconnect", _0_RTC.PortService._d_notify_disconnect, args)
+TRANSIENT: CORBA.TRANSIENT(omniORB.TRANSIENT_ConnectFailed, CORBA.COMPLETED_NO)
+
+2016-10-05 17:22:06,443 S_Signal WARNING Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\PortBase.py", line 2262, in checkPorts
+    if port._non_existent():
+  File "C:\Python27\lib\site-packages\omniORB\CORBA.py", line 561, in _non_existent
+    return self._obj.nonExistent()
+COMM_FAILURE: CORBA.COMM_FAILURE(omniORB.COMM_FAILURE_WaitingForReply, CORBA.COMPLETED_MAYBE)
+
+2016-10-05 17:22:06,443 S_Signal WARNING Dead connection: ed81e60f-8ad1-11e6-8563-7c5cf857c24e
+2016-10-05 17:22:06,444 S_Signal WARNING Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\PortBase.py", line 1624, in disconnectNext
+    return p.notify_disconnect(connector_profile.connector_id)
+  File "C:\Python27\lib\site-packages\OpenRTM_aist\RTM_IDL\RTC_idl.py", line 1207, in notify_disconnect
+    return self._obj.invoke("notify_disconnect", _0_RTC.PortService._d_notify_disconnect, args)
+COMM_FAILURE: CORBA.COMM_FAILURE(omniORB.COMM_FAILURE_WaitingForReply, CORBA.COMPLETED_MAYBE)
+
+2016-10-05 17:25:27,187 ec_worker ERROR State of the RTC is not ACTIVE_STATE.
+2016-10-05 17:25:27,190 ec_worker WARNING ExecutionContext is already stopped.
+2016-10-05 17:25:27,190 ec_base ERROR Invoking on_shutdown() for each RTC failed.

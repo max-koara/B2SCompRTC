@@ -208,7 +208,7 @@ class B2SComp(OpenRTM_aist.DataFlowComponentBase):
 				self._d_s_signal.data = 0
 
 		self._S_SignalOut.write()		
-
+		print self._d_s_signal.data
 		return RTC.RTC_OK
 	
 	#	##
